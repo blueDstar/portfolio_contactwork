@@ -1,0 +1,11 @@
+.qa/
+__pycache__/
+docs/
+tests/
+tools/
+QA.md
+.env
+.env.*
+*.log
+Thumbs.db
+.DS_Store
