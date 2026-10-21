@@ -15,7 +15,7 @@ window.blueDStarChat = (() => {
     const base=innerWidth<=560?16:24;
     launch.style.bottom=base+'px';
     let box=launch.getBoundingClientRect(),bottom=base;
-    for(const target of document.querySelectorAll('.hero-controls a,.contact-band .round-link')){
+    for(const target of document.querySelectorAll('.hero-bottom,.contact-band .round-link')){
       const r=target.getBoundingClientRect();
       if(r.top<innerHeight&&r.bottom>0&&r.left<box.right&&r.right>box.left&&r.top<box.bottom&&r.bottom>box.top){
         bottom=Math.max(bottom,innerHeight-r.top+12);

@@ -35,7 +35,7 @@ Mở http://127.0.0.1:4173/. Dừng server bằng `Ctrl+C`. Nên dùng HTTP thay
 ## Các file chính
 
 - `index.html`: shell, metadata, điều hướng và dialog.
-- `styles.css`, `media.css`, `enhancements.css`: giao diện, ảnh responsive và chuyển động.
+- `styles.css`, `media.css`, `enhancements.css`, `portfolio-refresh.css`: giao diện, ảnh responsive và chuyển động.
 - `data.js`: hồ sơ, học vấn, kinh nghiệm, dự án và liên kết.
 - `media.js`: 37 mục media với đường dẫn, kích thước, srcset, alt/caption VI/EN.
 - `app.js`: hash router, ngôn ngữ, timeline, lọc dự án và nội dung trang.
@@ -43,16 +43,18 @@ Mở http://127.0.0.1:4173/. Dừng server bằng `Ctrl+C`. Nên dùng HTTP thay
 - `robotics-lab.js`, `robotics-lab.css`: renderer 3D tải khi cần, hình học nguyên lý của tay máy/cơ cấu, điều khiển khớp, mặt cắt và viewport camera. `state` trong `studio.js` giữ góc nhìn và các lựa chọn khi đổi VI/EN.
 - `assets/vendor/three/`, `THIRD_PARTY_NOTICES.md`: thư viện Three.js đã ghim phiên bản và giấy phép MIT. Không sửa thư viện để chỉnh mô hình; sửa `robotics-lab.js`.
 - `gallery.js`: góc CAD, lightbox, bàn phím và vuốt.
-- `illustrations.js`: minh họa SVG các robot/linh kiện.
+- `illustrations.js`: hình SVG linh kiện và ảnh dự phòng.
+- `assets/interests/`: ảnh 3D WebP của tám hướng quan tâm, có lưới mặt đất. OpenArm và G1 dùng hình học URDF/mesh chính thức; các hệ còn lại được dựng theo cấu trúc cơ khí/phần cứng. Home không tải thêm WebGL. Xem nguồn và giấy phép trong `THIRD_PARTY_NOTICES.md`.
+- `OBJECTS` trong `data.js`: câu hỏi, mô tả, ba trọng tâm, công nghệ và liên kết của từng hướng quan tâm.
 - `chat.js`: giao diện Chat và adapter để tích hợp model sau này.
-- `assets/`: 148 WebP của 35 ảnh/render và hai logo, cùng favicon.
+- `assets/`: 148 WebP tư liệu dự án/ảnh cá nhân/logo, 27 WebP cho bộ hình 3D mới, hai CV PDF và favicon.
 - `.nojekyll`: phục vụ website tĩnh trực tiếp trên GitHub Pages.
 
 Các ghi chú nội bộ, ảnh QA, thư mục nguồn và công cụ xử lý ảnh không được đưa vào repository công khai. Tài liệu bảo trì chi tiết vẫn có trong workspace cục bộ ở `docs/local-maintenance.md`.
 
 ## Sửa nội dung
 
-Chỉnh `PROFILE`, `EXPERIENCES`, `PROJECTS` và `ASSETS` trong `data.js`. Chuỗi song ngữ dùng `{vi: '...', en: '...'}`. Giữ `repo`, `video`, `cvVI`, `cvEN` là `null` khi chưa có file hoặc URL thật.
+Chỉnh `PROFILE`, `EXPERIENCES`, `PROJECTS` và `ASSETS` trong `data.js`. Chuỗi song ngữ dùng `{vi: '...', en: '...'}`. Giữ `repo`, `video` là `null` khi chưa có URL thật. Hai đường dẫn CV hiện trỏ tới PDF được tổng hợp từ hồ sơ cung cấp.
 
 Một dự án có ảnh dùng `cover` và `gallery` tham chiếu ID trong `media.js`. Các phần mô tả gồm `overview`, `goal`, `contribution`, `architecture`, `approach`, `chapters`, `evidence`, `limits`. Chỉ thêm `views` khi các góc là cùng phiên bản CAD.
 
@@ -61,12 +63,12 @@ Một dự án có ảnh dùng `cover` và `gallery` tham chiếu ID trong `medi
 1. Đặt ảnh WebP đã tối ưu trong `assets/portraits/`, `assets/companies/` hoặc `assets/projects/<project>/`.
 2. Cập nhật đường dẫn, `width`, `height`, `srcset`, `variants`, alt/caption VI/EN trong `media.js`.
 3. Giữ ID hiện tại nếu muốn thay ảnh mà không đổi template. `ASSETS` trong `data.js` chọn các ảnh cá nhân.
-4. Giữ `height: auto` cho ảnh studio để ảnh co đồng thời hai chiều và không xuất hiện nền đệm. Khi đổi tỷ lệ Hero, cập nhật tỷ lệ giới hạn 1024/956 ở cuối `enhancements.css`.
+4. Giữ `height: auto` cho ảnh studio để ảnh co đồng thời hai chiều và không xuất hiện nền đệm. Khi đổi tỷ lệ Hero, cập nhật tỷ lệ giới hạn 1024/956 trong `enhancements.css` và `portfolio-refresh.css`.
 5. Kiểm tra lại ảnh ở 320/375px, khoảng 714px, laptop và desktop; giữ rõ mặt, kính và tay.
 
 GUI giữ màu trong nội dung; cover mặc định đơn sắc và lên màu khi hover/focus. Gallery tải bản full khi mở lightbox; viewport camera của Studio dùng bản full để trích đúng khung hình. Không thay số/chữ trong screenshot hoặc tạo thông số thử nghiệm chưa có nguồn. Khi thay ảnh dashboard của Studio, cập nhật tỷ lệ/offset viewport trong `robotics-lab.css` theo bố cục nguồn mới.
 
-## Thêm CV
+## CV tiếng Việt và tiếng Anh
 
 Đặt PDF thật tại `assets/cv-vi.pdf`, `assets/cv-en.pdf`, rồi sửa `ASSETS`:
 
@@ -75,7 +77,9 @@ cvVI: './assets/cv-vi.pdf',
 cvEN: './assets/cv-en.pdf'
 ```
 
-Hiện CV chưa được gắn; giao diện thông báo rõ thay vì tạo link hỏng.
+Hai PDF hiện có là CV chuyên nghiệp một trang A4, đơn sắc, chọn/copy được chữ và có liên kết liên hệ. Nút **CV ↓** mở lựa chọn VI/EN; chọn **Tải PDF** để tải trực tiếp.
+
+Khi cập nhật hồ sơ, thay hai PDF bằng bản mới tại cùng đường dẫn. Kiểm tra nội dung, dấu tiếng Việt, liên kết và tải xuống cả hai bản. Hồ sơ nguồn riêng tư được giữ ngoài repository công khai. Công cụ tạo PDF cục bộ ở `tools/build_cv.py` và ghi chú đối chiếu trong `.qa/` không được xuất bản. Điểm GPA được bỏ vì các hồ sơ nguồn chưa thống nhất.
 
 ## Tích hợp chatbot sau này
 
@@ -98,7 +102,7 @@ GitHub Pages phục vụ branch `main`, thư mục `/(root)`. Website dùng đư
 Sau khi sửa và kiểm tra:
 
 ```powershell
-git add index.html app.js studio.js studio.css robotics-lab.js robotics-lab.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css assets README.md THIRD_PARTY_NOTICES.md .gitignore .nojekyll
+git add index.html app.js studio.js studio.css robotics-lab.js robotics-lab.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css portfolio-refresh.css assets README.md THIRD_PARTY_NOTICES.md .gitignore .nojekyll
 git commit -m "Update portfolio"
 git push origin main
 ```
