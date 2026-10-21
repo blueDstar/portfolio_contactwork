@@ -2,13 +2,15 @@
 
 Portfolio về Robotics R&D, hệ thống nhúng, điều khiển và thị giác máy tính.
 
-**Website:** https://bluedstar.github.io/portfolio_contactwork/
+**Website chính thức:** [bluedstar.id.vn](https://bluedstar.id.vn/#/home)
+
+**Hosting:** GitHub Pages, sử dụng tên miền riêng `bluedstar.id.vn`.
 
 **Repository:** https://github.com/blueDstar/portfolio_contactwork
 
 Website chạy bằng HTML/CSS/JavaScript tĩnh, không cần backend hoặc bước build. Có giao diện VI/EN, sáu case study, gallery/lightbox, bộ góc CAD Vision Station và hộp thoại Chat chờ tích hợp model.
 
-**Studio tương tác:** https://bluedstar.github.io/portfolio_contactwork/#/studio
+**Studio tương tác:** https://bluedstar.id.vn/#/studio
 
 Studio có ba góc nhìn, mỗi lần chỉ hiển thị một lớp:
 
