@@ -10,7 +10,7 @@
   let lang=read('workshop-language','vi'); if(!['vi','en'].includes(lang))lang='vi';
   const L=value=>value&&typeof value==='object'?value[lang]||value.vi:value;
   const DICT={
-    skip:['Đến nội dung chính','Skip to content'],about:['Giới thiệu','About'],experience:['Kinh nghiệm','Experience'],work:['Dự án','Work'],contact:['Liên hệ','Contact'],close:['Đóng','Close'],
+    skip:['Đến nội dung chính','Skip to content'],about:['Giới thiệu','About'],experience:['Kinh nghiệm','Experience'],work:['Dự án','Work'],contact:['Liên hệ','Contact'],close:['Đóng','Close'],studio:['Studio','Studio'],search:['Tìm dự án hoặc công nghệ','Search projects or technologies'],
     references:['Tham khảo nguyên lý hệ thống','System background references'],expImage:['Ảnh studio / Robotics','Studio image / Robotics'],contactSignal:['Kết nối ý tưởng với chuyển động.','Connecting ideas to motion.'],contactPortraitNote:['CÙNG TẠO NÊN ĐIỀU TIẾP THEO','LET’S BUILD WHAT COMES NEXT'],chatOpen:['Mở trò chuyện','Open chat'],chatTitle:['Trò chuyện cùng blueDStar','Chat with blueDStar'],
     footerNote:['Từ ý tưởng đến chuyển động.','From ideas to motion.'],explore:['Khám phá dự án','Explore projects'],scroll:['Cuộn để khám phá','Scroll to explore'],
     claim:['Tôi tạo nên những chuyển động.','I build things that move.'],portrait:['Nhân vật minh họa, có thể thay ảnh thật.','Illustrated stand-in; replaceable with a real portrait.'],illustration:['Minh họa','Illustration'],
@@ -35,6 +35,8 @@
   const main=$('#main'),tooltip=$('#tooltip'),panel=$('#object-panel');
   const wm=window.WorkshopMedia;
   wm.configure({language:()=>lang,translate:t,reduced:()=>reduce.matches});
+  const studio=window.ResearchStudio;
+  studio.configure({language:()=>lang,reduced:()=>reduce.matches});
   const arrow='<span class="arrow" aria-hidden="true">↗</span>';
   const link=(hash,label,cls='text-link')=>`<a class="${cls}" href="${hash}">${label}${arrow}</a>`;
   function portrait(context='hero'){
@@ -58,7 +60,7 @@
   function home(){
     const gallery=[['arm','large'],['car',''],['humanoid',''],['hexapod',''],['stewart','']];
     return `<section class="hero shell photo-hero branded-hero" aria-label="blueDStar Robotics"><div class="hero-meta"><div><p class="hero-name">NGUYỄN VĂN ĐẠT</p><p class="hero-role">${P.role}</p></div><p class="hero-edition mono">blueDStar / ROBOTICS<br>HO CHI MINH CITY, VN</p></div><h1 class="hero-title" tabindex="-1"><span>blueDStar</span></h1><div class="hero-stage">${portrait()}<div class="hero-arm">${obj('arm')}</div>${['pi','motor','camera','esp32','encoder','gear'].map((id,i)=>`<div class="hero-component c-${id}">${obj(id)}<span class="hero-object-number" aria-hidden="true">0${i+1}</span></div>`).join('')}</div><button class="scroll-hint mono" data-scroll-gallery>${t('scroll')}</button><div class="hero-bottom"><div><p class="hero-claim">${t('claim')}</p><p class="hero-specialties mono">ROBOTICS R&D / EMBEDDED / CONTROL</p></div><div class="hero-controls">${link('#/work',t('explore'),'button light')}${link('#/experience',t('experience'))}</div></div></section>
-    <section class="intro-section section shell reveal"><p class="section-label eyebrow">${t('introLabel')}</p><div><p class="intro-copy">${t('introFirst')} <span class="muted">${t('introSecond')}</span></p><div class="intro-bottom">${link('#/about',t('moreAbout'))}<span class="mono muted">ROBOTICS · EMBEDDED · VISION</span></div></div></section>
+    ${studio.home()}
     <section id="robot-gallery" class="gallery section shell"><p class="section-label eyebrow">${t('galleryLabel')}</p><div class="gallery-header reveal"><h2>${t('galleryTitle')}</h2><p>${t('galleryIntro')}</p></div><div class="gallery-grid">${gallery.map(([id,cls],i)=>{const o=OBJECTS.find(x=>x.id===id);return `<button class="gallery-item object-button ${cls} reveal" data-object="${id}" aria-label="${e(L(o.name))}: ${e(L(o.label))}" aria-expanded="false" aria-controls="object-panel" style="--reveal-delay:${i*70}ms"><span class="gallery-meta"><span class="mono muted">0${i+1}</span><span class="mono">↗</span></span><span class="object-hover"><span class="object-tilt">${art(o.art)}</span></span><span><span class="gallery-name">${e(L(o.name))}</span><span class="gallery-type mono">${o.project?t('realProject'):id==='arm'?t('research'):t('study')}</span></span></button>`;}).join('')}</div><div class="gallery-caption mono"><span>${t('galleryNote')}</span><span>${t('galleryScope')}</span></div><div class="gallery-extra">${obj('oled')}<div><p class="eyebrow">06 / OLED ROBOT</p><p>${t('oledNote')}</p></div></div></section>
     <section class="selected-work section"><div class="shell"><p class="section-label eyebrow">${t('selectedLabel')}</p><div class="section-header reveal"><h2>${t('selectedTitle')}</h2>${link('#/work',t('allWork'))}</div><div class="work-grid">${projectCard(PROJECTS[0],0,true)}${projectCard(PROJECTS[1],1)}${projectCard(PROJECTS[2],2)}</div><div class="home-work-list">${PROJECTS.slice(3).map((p,i)=>`<a class="home-work-row" href="#/work/${p.slug}"><span class="mono">0${i+4}</span><div><h3>${e(L(p.name))}</h3><p class="mono">${e(L(p.status))}</p></div>${arrow}</a>`).join('')}</div></div></section>${contactBand()}`;
   }
@@ -98,6 +100,7 @@
     if(path==='/about')return {render:about,title:t('about'),nav:'/about'};
     if(path==='/experience')return {render:experiencePage,title:t('experience'),nav:'/experience'};
     if(path==='/work')return {render:workPage,title:t('work'),nav:'/work'};
+    if(path==='/studio')return {render:studio.page,title:'Studio',nav:'/studio'};
     if(path==='/contact')return {render:contact,title:t('contact'),nav:'/contact'};
     const p=PROJECTS.find(p=>path==='/work/'+p.slug);if(p)return {render:()=>projectPage(p),title:L(p.name),nav:'/work'};
     return {render:notFound,title:'404',nav:null};
@@ -115,13 +118,17 @@
     $('meta[name="description"]').content=t('desc');
     $('#image-dialog').setAttribute('aria-label',t('openImage'));
     $('[data-chat-open]').setAttribute('aria-label',t('chatOpen'));
+    $('[data-search-open]').setAttribute('aria-label',t('search'));
+    $('[data-search-open]').title=t('search')+' (/ · Ctrl/Cmd+K)';
+    studio.refreshSearch();
     window.blueDStarChat?.setLanguage(lang);
   }
   function stopScene(){
+    studio.cleanup();
     observer?.disconnect();sceneObserver?.disconnect();cancelAnimationFrame(frame);clearTimeout(detailTimer);frame=0;
     heroVisible=false;tiltElement=null;lastFrame=0;hideTooltip();closeObject(false);
   }
-  function renderRoute(hash){stopScene();main.innerHTML=routeInfo(hash).render();displayedRoute=hash;updateShell(hash);renderResults();setupScene();}
+  function renderRoute(hash){stopScene();main.innerHTML=routeInfo(hash).render();displayedRoute=hash;updateShell(hash);renderResults();setupScene();studio.mount();}
   function saveScroll(){if(currentKey)routeScroll.set(currentKey,scrollY);if(displayedRoute==='#/work')workScroll=scrollY;}
   function focusTitle(){const title=$('h1',main);title?.focus({preventScroll:true});}
   function settleRoute(hash,key,restore,token){
@@ -159,8 +166,10 @@
     document.body.classList.add('motion-ready');requestFrame();
   }
   function requestFrame(){if(!frame&&!document.hidden)frame=requestAnimationFrame(tick);}
+  function updateReadingProgress(){document.documentElement.style.setProperty('--reading-progress',Math.min(1,Math.max(0,scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))));}
   function tick(now){
     frame=0;const dt=Math.min(now-(lastFrame||now-16),40),alpha=1-Math.exp(-dt/100);lastFrame=now;
+    updateReadingProgress();
     const hero=$('.hero');if(hero&&heroVisible){
       const progress=Math.max(0,Math.min(scrollY/(hero.offsetHeight*.65),1));
       hero.classList.toggle('pose-b',progress>.32);
@@ -178,10 +187,11 @@
   }
   addEventListener('scroll',()=>{
     hideTooltip();
+    updateReadingProgress();
     // Pose is content state: keep it in sync even when the browser throttles rAF
     // in an embedded/background preview. Visual parallax still uses one rAF.
     const hero=$('.hero');if(hero)hero.classList.toggle('pose-b',scrollY/(hero.offsetHeight*.65)>.32);
-    if(heroVisible)requestFrame();
+    requestFrame();
   },{passive:true});
   document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);if(document.hidden){cancelAnimationFrame(frame);frame=0;lastFrame=0;}else requestFrame();});
   reduce.addEventListener('change',()=>{if(reduce.matches)$$('.object-tilt').forEach(x=>{x.style.removeProperty('--rx');x.style.removeProperty('--ry');});requestFrame();});

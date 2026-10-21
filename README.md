@@ -8,6 +8,12 @@ Portfolio về Robotics R&D, hệ thống nhúng, điều khiển và thị giá
 
 Website chạy bằng HTML/CSS/JavaScript tĩnh, không cần backend hoặc bước build. Có giao diện VI/EN, sáu case study, gallery/lightbox, bộ góc CAD Vision Station và hộp thoại Chat chờ tích hợp model.
 
+**Studio tương tác:** https://bluedstar.github.io/portfolio_contactwork/#/studio
+
+Studio là một nghiên cứu hình học bằng SVG: chọn đường Lissajous/quỹ đạo/cánh hoa, kéo đầu bút hoặc dùng phím mũi tên, tạm dừng, điều chỉnh vị trí và lưu nét vẽ thành SVG. Mô hình 2R sử dụng đơn vị minh họa, có giới hạn vùng với tới; không đại diện dữ liệu thử robot thật. Ba Field Notes nối các câu hỏi nghiên cứu với dự án đã có.
+
+Nút kính lúp hoặc phím `/`, `Ctrl/Cmd+K` mở tìm kiếm dự án, công nghệ và trang. Tìm tiếng Việt có hoặc không dấu; dùng mũi tên, Enter và Escape. Case study có mục lục cố định và vạch tiến độ đọc. Chế độ giảm chuyển động của hệ điều hành tắt tự chạy Studio; người xem vẫn có thể chủ động bấm Chuyển động.
+
 ## Chạy cục bộ
 
 Tại thư mục chứa `index.html`:
@@ -25,6 +31,7 @@ Mở http://127.0.0.1:4173/. Dừng server bằng `Ctrl+C`. Nên dùng HTTP thay
 - `data.js`: hồ sơ, học vấn, kinh nghiệm, dự án và liên kết.
 - `media.js`: 37 mục media với đường dẫn, kích thước, srcset, alt/caption VI/EN.
 - `app.js`: hash router, ngôn ngữ, timeline, lọc dự án và nội dung trang.
+- `studio.js`, `studio.css`: thí nghiệm động học 2R, bản vẽ SVG, Field Notes, tìm kiếm và mục lục case study. Sửa các ghi chú song ngữ trong mảng `notes`; giữ slug/ID ảnh trỏ tới dự án và media thật.
 - `gallery.js`: góc CAD, lightbox, bàn phím và vuốt.
 - `illustrations.js`: minh họa SVG các robot/linh kiện.
 - `chat.js`: giao diện Chat và adapter để tích hợp model sau này.
@@ -81,7 +88,7 @@ GitHub Pages phục vụ branch `main`, thư mục `/(root)`. Website dùng đư
 Sau khi sửa và kiểm tra:
 
 ```powershell
-git add index.html app.js data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css assets README.md .gitignore .nojekyll
+git add index.html app.js studio.js studio.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css assets README.md .gitignore .nojekyll
 git commit -m "Update portfolio"
 git push origin main
 ```
