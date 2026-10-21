@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">blueDStar / Research cover template</title>
+  <desc id="desc">Khung ngang 16:9 cho bìa nghiên cứu. Thay vùng tư liệu và tiêu đề theo bài viết hoặc video.</desc>
+  <rect width="1600" height="900" fill="#0B0B0B"/>
+  <g fill="#F3F0E9" font-family="Arial, Segoe UI, sans-serif">
+    <text x="80" y="126" font-size="72" font-weight="700" letter-spacing="-4">blueDStar</text>
+    <text x="1520" y="112" text-anchor="end" font-size="22" font-family="Consolas, Liberation Mono, monospace" fill="#A5A5A5">RESEARCH STUDIO / [TÊN DỰ ÁN]</text>
+    <path d="M80 175H1520" stroke="#303030"/>
+    <text x="80" y="275" font-size="22" font-family="Consolas, Liberation Mono, monospace" fill="#A5A5A5" letter-spacing="1.5">INSIDE THE SYSTEM</text>
+    <text x="74" y="405" font-size="103" letter-spacing="-6">Một câu hỏi.</text>
+    <text x="74" y="521" font-size="103" font-style="italic" fill="#B9B7B2" letter-spacing="-6">Một hệ robot.</text>
+    <text x="80" y="617" font-size="30" fill="#A5A5A5">[Một lớp cơ cấu, điều khiển hoặc nhận thức.]</text>
+    <rect x="970" y="235" width="550" height="440" fill="#141414" stroke="#303030"/>
+    <text x="1245" y="440" text-anchor="middle" font-size="26" fill="#A5A5A5">[ẢNH / CAD / BẰNG CHỨNG]</text>
+    <text x="1245" y="485" text-anchor="middle" font-size="21" fill="#A5A5A5">Tư liệu chính của bài</text>
+    <path d="M80 755H1520" stroke="#303030"/>
+    <text x="80" y="818" font-size="22" font-family="Consolas, Liberation Mono, monospace" fill="#A5A5A5">NGUYỄN VĂN ĐẠT / ROBOTICS R&amp;D</text>
+    <text x="1365" y="818" text-anchor="end" font-size="27">Khám phá dự án</text>
+    <path d="m1460 826 45-45m-45 0h45v45" fill="none" stroke="#F3F0E9" stroke-width="3"/>
+  </g>
+</svg>

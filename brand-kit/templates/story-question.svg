@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">blueDStar / Story question template</title>
+  <desc id="desc">Khung dọc 9:16 cho câu hỏi nghiên cứu. Các vùng trong ngoặc vuông cần thay trước khi sử dụng.</desc>
+  <rect width="1080" height="1920" fill="#0B0B0B"/>
+  <g fill="#F3F0E9" font-family="Arial, Segoe UI, sans-serif">
+    <text x="72" y="210" font-size="68" font-weight="700" letter-spacing="-4">blueDStar</text>
+    <g transform="translate(940 157) scale(2.5)" stroke="#F3F0E9" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></g>
+    <path d="M72 270H1008" stroke="#303030"/>
+    <text x="72" y="365" font-size="24" font-family="Consolas, Liberation Mono, monospace" fill="#A5A5A5" letter-spacing="2">01 / THE QUESTION</text>
+    <text x="68" y="510" font-size="106" letter-spacing="-6">Điều gì khiến</text>
+    <text x="68" y="626" font-size="106" letter-spacing="-6">một hệ robot</text>
+    <text x="68" y="742" font-size="106" font-style="italic" fill="#B9B7B2" letter-spacing="-6">đáng tin?</text>
+    <text x="72" y="850" font-size="36" fill="#A5A5A5">[Một quan sát cụ thể từ dự án.]</text>
+    <text x="72" y="902" font-size="36" fill="#A5A5A5">[Một điều bạn muốn kiểm tra tiếp.]</text>
+    <rect x="72" y="1040" width="936" height="470" fill="#141414" stroke="#303030"/>
+    <text x="540" y="1262" text-anchor="middle" font-size="28" fill="#A5A5A5">[KHUNG CAMERA / CƠ CẤU / THỬ NGHIỆM]</text>
+    <text x="540" y="1310" text-anchor="middle" font-size="22" fill="#A5A5A5">Giữ ảnh và nhãn dữ liệu đọc được</text>
+    <path d="M72 1580H1008" stroke="#303030"/>
+    <text x="72" y="1652" font-size="31">Câu hỏi tiếp theo của bạn là gì?</text>
+    <text x="72" y="1703" font-size="21" font-family="Consolas, Liberation Mono, monospace" fill="#A5A5A5">OBSERVE / QUESTION / BUILD / REFINE</text>
+    <path d="m954 1705 42-42m-42 0h42v42" fill="none" stroke="#F3F0E9" stroke-width="3"/>
+  </g>
+</svg>

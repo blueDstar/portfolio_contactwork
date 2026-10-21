@@ -22,6 +22,12 @@ Mô hình đứng yên mặc định. Bấm **Chạy chu kỳ** để chuyển �
 
 Nút kính lúp hoặc phím `/`, `Ctrl/Cmd+K` mở tìm kiếm dự án, công nghệ và trang. Tìm tiếng Việt có hoặc không dấu; dùng mũi tên, Enter và Escape. Case study có mục lục cố định và vạch tiến độ đọc. Đổi sang chế độ giảm chuyển động sẽ dừng chu kỳ đang chạy.
 
+## Bộ nhận diện social
+
+Mở [brand-kit/preview.html](brand-kit/preview.html) để xem bảng màu, 14 icon SVG và ba khung social chỉnh sửa được. [Hướng dẫn bắt đầu](brand-kit/README.md) liên kết tới tài liệu chi tiết về định vị, typography, ảnh studio/CAD, giọng viết VI/EN, cấu trúc bài đăng và creative brief. [Tải toàn bộ ZIP](brand-kit/blueDStar_Social_Style_Kit.zip) để dùng offline.
+
+Icon giao diện được tạo bằng `icons.js`, dùng nét SVG nhận `currentColor` qua `icons.css`. Khi thêm nút mới, dùng `WorkshopIcons.svg('arrow-up-right')` hoặc tên icon trong `WorkshopIcons.paths`; tránh ký tự emoji cho mũi tên/dấu sao để đồng nhất desktop và điện thoại. Giữ nhãn chữ hoặc `aria-label` trên nút, SVG trang trí có `aria-hidden="true"`.
+
 ## Chạy cục bộ
 
 Tại thư mục chứa `index.html`:
@@ -35,6 +41,7 @@ Mở http://127.0.0.1:4173/. Dừng server bằng `Ctrl+C`. Nên dùng HTTP thay
 ## Các file chính
 
 - `index.html`: shell, metadata, điều hướng và dialog.
+- `icons.js`, `icons.css`: hệ icon SVG đơn sắc dùng chung cho mọi kích thước và nền tảng.
 - `styles.css`, `media.css`, `enhancements.css`, `portfolio-refresh.css`: giao diện, ảnh responsive và chuyển động.
 - `data.js`: hồ sơ, học vấn, kinh nghiệm, dự án và liên kết.
 - `media.js`: 37 mục media với đường dẫn, kích thước, srcset, alt/caption VI/EN.
@@ -102,7 +109,7 @@ GitHub Pages phục vụ branch `main`, thư mục `/(root)`. Website dùng đư
 Sau khi sửa và kiểm tra:
 
 ```powershell
-git add index.html app.js studio.js studio.css robotics-lab.js robotics-lab.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css portfolio-refresh.css assets README.md THIRD_PARTY_NOTICES.md .gitignore .nojekyll
+git add index.html app.js icons.js icons.css brand-kit studio.js studio.css robotics-lab.js robotics-lab.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css portfolio-refresh.css assets README.md THIRD_PARTY_NOTICES.md .gitignore .nojekyll
 git commit -m "Update portfolio"
 git push origin main
 ```

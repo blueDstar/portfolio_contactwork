@@ -1,0 +1,22 @@
+/* Monochrome geometry, independent of platform fonts and emoji presentation. */
+.ui-icon{display:inline-block;width:1em;height:1em;max-width:none;flex:0 0 auto;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible;pointer-events:none}
+.button .ui-icon,.text-link .ui-icon,.cv-option .ui-icon,.system-references .ui-icon,.image-open-label .ui-icon,.case-open-label .ui-icon{width:1em;height:1em}
+.language-button .ui-icon,.cv-button .ui-icon{margin-left:8px}
+.gallery-meta .ui-icon{width:14px;height:14px;color:var(--paper)}
+.round-link .ui-icon{width:28px;height:28px}
+.home-inquiries a>.ui-icon,.home-inquiries a>span:last-child .ui-icon{width:21px;height:21px;justify-self:end;align-self:center;color:inherit}
+.archive-results a>.ui-icon{width:17px;height:17px;color:var(--muted)}
+.note-plus .ui-icon{width:22px;height:22px}
+.chat-welcome .chat-star{display:inline-flex;color:#bbb;line-height:1}
+.chat-star .ui-icon{width:32px;height:32px}
+.chat-form button,.chat-top>button,[data-close-object],.angle-controls>button,[data-lightbox-step]{display:inline-flex;align-items:center;justify-content:center}
+.chat-form button .ui-icon{width:21px;height:21px}
+.chat-top>button .ui-icon,[data-close-object] .ui-icon{width:20px;height:20px}
+.angle-controls>button .ui-icon,[data-lightbox-step] .ui-icon{width:18px;height:18px}
+.lab-camera-actions .ui-icon{width:14px;height:14px;vertical-align:-.16em}
+.lab-play .ui-icon{width:16px;height:16px}
+.contact-social-row button .ui-icon{width:18px;height:18px}
+.lightbox-top [data-lightbox-close] .ui-icon,.archive-top [data-search-close] .ui-icon{margin-left:8px;width:14px;height:14px}
+.footer-links .ui-icon{width:12px;height:12px;margin-left:4px}
+input[type=checkbox],input[type=radio],input[type=range]{accent-color:var(--paper)}
+@media(max-width:560px){.home-inquiries a>.ui-icon,.home-inquiries a>span:last-child .ui-icon{width:19px;height:19px}.round-link .ui-icon{width:22px;height:22px}}

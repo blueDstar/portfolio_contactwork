@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="dark">
   <meta name="description" content="Nguyễn Văn Đạt — Junior Robotics R&D Engineer. Robotics, hệ thống nhúng, điều khiển và thị giác máy tính.">
   <title>blueDStar — Nguyễn Văn Đạt</title>
   <link rel="canonical" href="https://bluedstar.github.io/portfolio_contactwork/">
@@ -18,6 +19,8 @@
   <link rel="stylesheet" href="./studio.css">
   <link rel="stylesheet" href="./robotics-lab.css">
   <link rel="stylesheet" href="./portfolio-refresh.css">
+  <link rel="stylesheet" href="./icons.css">
+  <script src="./icons.js" defer></script>
   <script src="./media.js" defer></script>
   <script src="./data.js" defer></script>
   <script src="./illustrations.js" defer></script>
@@ -39,8 +42,8 @@
     </nav>
     <div class="header-actions">
       <button class="search-button" data-search-open aria-label="Tìm dự án hoặc công nghệ" aria-haspopup="dialog" aria-controls="search-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
-      <button class="language-button" data-language aria-label="Switch to English">EN <span aria-hidden="true">↗</span></button>
-      <button class="cv-button" data-cv>CV <span aria-hidden="true">↓</span></button>
+      <button class="language-button" data-language aria-label="Switch to English">EN <span aria-hidden="true"><svg class="ui-icon " data-ui-icon="arrow-up-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button>
+      <button class="cv-button" data-cv>CV <span aria-hidden="true"><svg class="ui-icon " data-ui-icon="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></span></button>
       <button class="menu-button" data-menu aria-label="Mở menu" aria-expanded="false" aria-controls="menu-dialog"><span></span><span></span></button>
     </div>
   </header>
@@ -55,19 +58,19 @@
   </main>
   <footer class="site-footer shell">
     <div><a href="#/home">VĂN ĐẠT / ROBOTICS</a><p data-i18n="footerNote">Từ ý tưởng đến chuyển động.</p></div>
-    <div class="footer-links"><a href="https://github.com/blueDstar" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/vandat152/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:datvan.contact4work@gmail.com">Email ↗</a></div>
+    <div class="footer-links"><a href="https://github.com/blueDstar" target="_blank" rel="noopener noreferrer">GitHub <svg class="ui-icon " data-ui-icon="arrow-up-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="https://www.linkedin.com/in/vandat152/" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="ui-icon " data-ui-icon="arrow-up-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="mailto:datvan.contact4work@gmail.com">Email <svg class="ui-icon " data-ui-icon="arrow-up-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
     <span class="mono">© 2026 NGUYỄN VĂN ĐẠT</span>
   </footer>
   <div class="route-curtain" aria-hidden="true"></div>
   <dialog id="menu-dialog" class="menu-dialog" aria-labelledby="menu-title"><div class="dialog-top"><span id="menu-title" class="mono">NAVIGATION</span><button data-close-dialog data-i18n="close">Đóng</button></div><nav data-nav aria-label="Mobile navigation"><a href="#/home">Home</a><a href="#/about" data-i18n="about">Giới thiệu</a><a href="#/experience" data-i18n="experience">Kinh nghiệm</a><a href="#/work" data-i18n="work">Dự án</a><a href="#/studio" data-i18n="studio">Studio</a><a href="#/contact" data-i18n="contact">Liên hệ</a></nav><p class="mono">HO CHI MINH CITY, VIETNAM</p></dialog>
-  <dialog id="search-dialog" class="archive-dialog" aria-labelledby="archive-title"><div class="archive-top"><h2 id="archive-title">Tìm trong sổ tay.</h2><button data-search-close>Đóng ×</button></div><div class="archive-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="archive-query" type="search" autocomplete="off" spellcheck="false" aria-label="Tìm dự án hoặc công nghệ"></div><p class="archive-status mono" role="status" aria-live="polite"></p><ul class="archive-results"></ul></dialog>
+  <dialog id="search-dialog" class="archive-dialog" aria-labelledby="archive-title"><div class="archive-top"><h2 id="archive-title">Tìm trong sổ tay.</h2><button data-search-close>Đóng <svg class="ui-icon " data-ui-icon="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="archive-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="archive-query" type="search" autocomplete="off" spellcheck="false" aria-label="Tìm dự án hoặc công nghệ"></div><p class="archive-status mono" role="status" aria-live="polite"></p><ul class="archive-results"></ul></dialog>
   <dialog id="cv-dialog" class="content-dialog" aria-labelledby="cv-title"></dialog>
   <dialog id="image-dialog" class="image-dialog" aria-label="Project image"></dialog>
   <button class="chat-launcher" data-chat-open aria-label="Mở trò chuyện" aria-haspopup="dialog" aria-controls="chat-dialog" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v12H9l-4 4V4Z"/><path d="M8 8h8M8 12h5"/></svg><span>Chat</span><span class="chat-launcher-dot" aria-hidden="true"></span></button>
   <dialog id="chat-dialog" class="chat-dialog" aria-labelledby="chat-title">
-    <div class="chat-top"><div><span class="mono">blueDStar</span><h2 id="chat-title"></h2></div><button data-chat-close aria-label="Đóng">×</button></div>
-    <div class="chat-messages" role="log" aria-live="polite"><div class="chat-welcome"><span class="chat-star" aria-hidden="true">✳</span><h3></h3><p></p></div></div>
-    <form class="chat-form"><label class="sr-only" for="chat-input">Tin nhắn</label><textarea id="chat-input" rows="2" maxlength="2000" disabled></textarea><button type="submit" disabled><span aria-hidden="true">↗</span></button></form>
+    <div class="chat-top"><div><span class="mono">blueDStar</span><h2 id="chat-title"></h2></div><button data-chat-close aria-label="Đóng"><svg class="ui-icon " data-ui-icon="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="chat-messages" role="log" aria-live="polite"><div class="chat-welcome"><span class="chat-star" aria-hidden="true"><svg class="ui-icon " data-ui-icon="asterisk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span><h3></h3><p></p></div></div>
+    <form class="chat-form"><label class="sr-only" for="chat-input">Tin nhắn</label><textarea id="chat-input" rows="2" maxlength="2000" disabled></textarea><button type="submit" disabled><span aria-hidden="true"><svg class="ui-icon " data-ui-icon="arrow-up-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button></form>
     <p class="chat-state mono" role="status"></p>
   </dialog>
   <aside id="object-panel" class="object-panel" aria-labelledby="object-title" hidden></aside>
