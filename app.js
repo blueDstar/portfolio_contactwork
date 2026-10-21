@@ -1,5 +1,5 @@
 /* Buildless application: semantic HTML, native scroll, native dialogs and one
-   requestAnimationFrame coordinator for scroll/tilt. No WebGL/CDN dependency. */
+   requestAnimationFrame coordinator for scroll/tilt. Optional Studio WebGL is lazy-loaded locally. */
 (() => {
   'use strict';
   const {PROFILE:P,ASSETS:A,EXPERIENCES,PROJECTS,OBJECTS,MOTION}=window.PORTFOLIO;

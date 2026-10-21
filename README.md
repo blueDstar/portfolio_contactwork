@@ -10,9 +10,17 @@ Website chạy bằng HTML/CSS/JavaScript tĩnh, không cần backend hoặc bư
 
 **Studio tương tác:** https://bluedstar.github.io/portfolio_contactwork/#/studio
 
-Studio là một nghiên cứu hình học bằng SVG: chọn đường Lissajous/quỹ đạo/cánh hoa, kéo đầu bút hoặc dùng phím mũi tên, tạm dừng, điều chỉnh vị trí và lưu nét vẽ thành SVG. Mô hình 2R sử dụng đơn vị minh họa, có giới hạn vùng với tới; không đại diện dữ liệu thử robot thật. Ba Field Notes nối các câu hỏi nghiên cứu với dự án đã có.
+Studio có ba góc nhìn, mỗi lần chỉ hiển thị một lớp:
 
-Nút kính lúp hoặc phím `/`, `Ctrl/Cmd+K` mở tìm kiếm dự án, công nghệ và trang. Tìm tiếng Việt có hoặc không dấu; dùng mũi tên, Enter và Escape. Case study có mục lục cố định và vạch tiến độ đọc. Chế độ giảm chuyển động của hệ điều hành tắt tự chạy Studio; người xem vẫn có thể chủ động bấm Chuyển động.
+- **Cánh tay máy:** mô hình 3D khớp nối, ba thanh chỉnh góc, các tư thế đặt sẵn, chu kỳ chuyển động chủ động và vị trí TCP theo đơn vị minh họa.
+- **Mặt cắt cơ cấu:** mô hình truyền động nguyên lý với mặt cắt vỏ và tách cụm theo trục. Đây là hình học tự dựng, không phải CAD DM4310; các góc CAD dự án thật vẫn nằm trong case study Vision Station.
+- **Thị giác robot:** khung camera trích bằng viewport CSS từ ảnh dashboard ROS2 và ảnh IPM trong tư liệu dự án, có xem màu nhãn gốc. Đây là ảnh đã ghi, không phải inference/camera live.
+
+Home giữ các câu hỏi dẫn vào Studio; phần nét vẽ đã được bỏ. THE QUESTION và ba Field Notes vẫn nối tư duy nghiên cứu với các dự án thật.
+
+Mô hình đứng yên mặc định. Bấm **Chạy chu kỳ** để chuyển động; **Xoay góc nhìn 3D** bật kéo/xoay và pinch. Tắt Xoay để cuộn dọc bình thường trên mô hình ở điện thoại. Three.js 0.186.1 được lưu cục bộ và chỉ tải khi cần 3D, không gọi CDN. Thiết bị thiếu WebGL 2 vẫn xem được ảnh dự án và mục Thị giác. Mô hình chưa xét động lực học, va chạm hoặc giới hạn motor.
+
+Nút kính lúp hoặc phím `/`, `Ctrl/Cmd+K` mở tìm kiếm dự án, công nghệ và trang. Tìm tiếng Việt có hoặc không dấu; dùng mũi tên, Enter và Escape. Case study có mục lục cố định và vạch tiến độ đọc. Đổi sang chế độ giảm chuyển động sẽ dừng chu kỳ đang chạy.
 
 ## Chạy cục bộ
 
@@ -31,7 +39,9 @@ Mở http://127.0.0.1:4173/. Dừng server bằng `Ctrl+C`. Nên dùng HTTP thay
 - `data.js`: hồ sơ, học vấn, kinh nghiệm, dự án và liên kết.
 - `media.js`: 37 mục media với đường dẫn, kích thước, srcset, alt/caption VI/EN.
 - `app.js`: hash router, ngôn ngữ, timeline, lọc dự án và nội dung trang.
-- `studio.js`, `studio.css`: thí nghiệm động học 2R, bản vẽ SVG, Field Notes, tìm kiếm và mục lục case study. Sửa các ghi chú song ngữ trong mảng `notes`; giữ slug/ID ảnh trỏ tới dự án và media thật.
+- `studio.js`, `studio.css`: nội dung Studio, Field Notes, tìm kiếm và mục lục case study. Sửa các ghi chú song ngữ trong mảng `notes`; giữ slug/ID ảnh trỏ tới dự án và media thật.
+- `robotics-lab.js`, `robotics-lab.css`: renderer 3D tải khi cần, hình học nguyên lý của tay máy/cơ cấu, điều khiển khớp, mặt cắt và viewport camera. `state` trong `studio.js` giữ góc nhìn và các lựa chọn khi đổi VI/EN.
+- `assets/vendor/three/`, `THIRD_PARTY_NOTICES.md`: thư viện Three.js đã ghim phiên bản và giấy phép MIT. Không sửa thư viện để chỉnh mô hình; sửa `robotics-lab.js`.
 - `gallery.js`: góc CAD, lightbox, bàn phím và vuốt.
 - `illustrations.js`: minh họa SVG các robot/linh kiện.
 - `chat.js`: giao diện Chat và adapter để tích hợp model sau này.
@@ -54,7 +64,7 @@ Một dự án có ảnh dùng `cover` và `gallery` tham chiếu ID trong `medi
 4. Giữ `height: auto` cho ảnh studio để ảnh co đồng thời hai chiều và không xuất hiện nền đệm. Khi đổi tỷ lệ Hero, cập nhật tỷ lệ giới hạn 1024/956 ở cuối `enhancements.css`.
 5. Kiểm tra lại ảnh ở 320/375px, khoảng 714px, laptop và desktop; giữ rõ mặt, kính và tay.
 
-GUI giữ màu trong nội dung; cover mặc định đơn sắc và lên màu khi hover/focus. Bản full chỉ tải khi mở lightbox. Không thay số/chữ trong screenshot hoặc tạo thông số thử nghiệm chưa có nguồn.
+GUI giữ màu trong nội dung; cover mặc định đơn sắc và lên màu khi hover/focus. Gallery tải bản full khi mở lightbox; viewport camera của Studio dùng bản full để trích đúng khung hình. Không thay số/chữ trong screenshot hoặc tạo thông số thử nghiệm chưa có nguồn. Khi thay ảnh dashboard của Studio, cập nhật tỷ lệ/offset viewport trong `robotics-lab.css` theo bố cục nguồn mới.
 
 ## Thêm CV
 
@@ -88,7 +98,7 @@ GitHub Pages phục vụ branch `main`, thư mục `/(root)`. Website dùng đư
 Sau khi sửa và kiểm tra:
 
 ```powershell
-git add index.html app.js studio.js studio.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css assets README.md .gitignore .nojekyll
+git add index.html app.js studio.js studio.css robotics-lab.js robotics-lab.css data.js media.js gallery.js chat.js illustrations.js styles.css media.css enhancements.css assets README.md THIRD_PARTY_NOTICES.md .gitignore .nojekyll
 git commit -m "Update portfolio"
 git push origin main
 ```
