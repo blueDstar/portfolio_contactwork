@@ -4,11 +4,15 @@ window.PORTFOLIO = (() => {
   const bi = (vi, en) => ({vi, en});
   const PROFILE = {
     name: 'Nguyễn Văn Đạt', englishName: 'Nguyen Van Dat', role: 'Junior Robotics R&D Engineer',
-    location: 'Ho Chi Minh City, Vietnam', email: 'datnvan.021504@gmail.com',
+    location: 'Ho Chi Minh City, Vietnam', email: 'datvan.contact4work@gmail.com',
     github: 'https://github.com/blueDstar', linkedin: 'https://www.linkedin.com/in/vandat152/',
     intro: bi('Tôi là Nguyễn Văn Đạt, theo đuổi Robotics R&D với nền tảng về hệ thống nhúng, điều khiển và thị giác máy tính. Tôi thích kết nối thiết kế cơ khí, phần cứng và phần mềm để đưa ý tưởng thành những hệ robot có thể lắp ráp, thử nghiệm và cải tiến.', "I'm Nguyen Van Dat, focused on Robotics R&D, embedded systems, control and computer vision. I enjoy connecting mechanical design, electronics and software to turn ideas into robotic systems that can be assembled, tested and improved."),
     education: bi('Cử nhân xuất sắc ngành Robot và Trí tuệ nhân tạo', 'Bachelor’s degree in Robotics and Artificial Intelligence — Excellent classification'),
-    university: bi('Đại học Công nghệ TP. Hồ Chí Minh — HUTECH', 'Ho Chi Minh City University of Technology — HUTECH'), educationDates: '08/2022 — 08/2026'
+    university: bi('Trường Đại học Công nghệ TP. Hồ Chí Minh — HUTECH', 'Ho Chi Minh City University of Technology — HUTECH'), educationDates: '08/2022 — 08/2026',
+    educationGPA: '3.74 / 4.0',
+    educationLocation: bi('Hồ Chí Minh','Ho Chi Minh City'),
+    educationFocus: bi('Lĩnh vực chính: Robotics, Hệ thống nhúng, Điều khiển tự động, Computer Vision, AI, IoT.','Main fields: Robotics, Embedded Systems, Automatic Control, Computer Vision, AI, IoT.'),
+    educationThesis: bi('Đồ án tốt nghiệp: Hệ thống xe tự hành sử dụng ROS2 và Raspberry Pi.','Graduation thesis: Autonomous Vehicle System Using ROS2 and Raspberry Pi.')
   };
   /* ASSETS: chỉ đổi null thành đường dẫn khi file thật đã nằm trong assets/.
      Ảnh nên tách nền, cùng tỉ lệ khung 640:720. Object-position chỉnh độc lập. */

@@ -79,7 +79,7 @@ cvEN: './assets/cv-en.pdf'
 
 Hai PDF hiện có là CV chuyên nghiệp một trang A4, đơn sắc, chọn/copy được chữ và có liên kết liên hệ. Nút **CV ↓** mở lựa chọn VI/EN; chọn **Tải PDF** để tải trực tiếp.
 
-Khi cập nhật hồ sơ, thay hai PDF bằng bản mới tại cùng đường dẫn. Kiểm tra nội dung, dấu tiếng Việt, liên kết và tải xuống cả hai bản. Hồ sơ nguồn riêng tư được giữ ngoài repository công khai. Công cụ tạo PDF cục bộ ở `tools/build_cv.py` và ghi chú đối chiếu trong `.qa/` không được xuất bản. Điểm GPA được bỏ vì các hồ sơ nguồn chưa thống nhất.
+Khi cập nhật hồ sơ, thay hai PDF bằng bản mới tại cùng đường dẫn. Kiểm tra nội dung, dấu tiếng Việt, liên kết và tải xuống cả hai bản. Hồ sơ nguồn riêng tư được giữ ngoài repository công khai. Công cụ tạo PDF cục bộ ở `tools/build_cv.py` và ghi chú đối chiếu trong `.qa/` không được xuất bản. GPA cuối cùng đã được chủ hồ sơ xác nhận là **3.74/4.0**. Email liên hệ hiện tại là **datvan.contact4work@gmail.com**.
 
 ## Tích hợp chatbot sau này
 
