@@ -1,6 +1,6 @@
 # blueDStar / Research, made tangible
 
-Bộ nhận diện để phát triển social của Nguyễn Văn Đạt, tiếp nối portfolio Robotics R&D. Phiên bản 1.0, ngày 21/10/2026.
+Bộ nhận diện để phát triển social của Nguyễn Văn Đạt, tiếp nối portfolio Robotics R&D. Phiên bản 1.0.1, ngày 26/10/2026.
 
 Tinh thần cốt lõi: **một người nghiên cứu robot có cách nhìn nghệ thuật**. Sự ấn tượng đến từ câu hỏi tốt, hình ảnh có chủ đích và bằng chứng kỹ thuật đọc được. Nền tối, chữ ngà, ảnh studio và cơ cấu thật tạo nên sự nhất quán.
 
@@ -34,7 +34,7 @@ Các SVG là khung thiết kế có placeholder, chưa phải nội dung dự á
 | --- | --- |
 | Tên hiển thị | Nguyễn Văn Đạt |
 | Tên thương hiệu | **blueDStar** — giữ nguyên cách viết hoa này |
-| Vai trò | Junior Robotics R&D Engineer |
+| Vai trò | Robotics R&D Engineer |
 | Định hướng | Robotics / Embedded Systems / Control / Computer Vision / AI / IoT |
 | Địa điểm | Hồ Chí Minh, Việt Nam |
 | Học vấn | Cử nhân xuất sắc ngành Robot và Trí tuệ nhân tạo, HUTECH |

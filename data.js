@@ -3,7 +3,7 @@
 window.PORTFOLIO = (() => {
   const bi = (vi, en) => ({vi, en});
   const PROFILE = {
-    name: 'Nguyễn Văn Đạt', englishName: 'Nguyen Van Dat', role: 'Junior Robotics R&D Engineer',
+    name: 'Nguyễn Văn Đạt', englishName: 'Nguyen Van Dat', role: 'Robotics R&D Engineer',
     location: 'Ho Chi Minh City, Vietnam', email: 'datvan.contact4work@gmail.com',
     github: 'https://github.com/blueDstar', linkedin: 'https://www.linkedin.com/in/vandat152/',
     intro: bi('Tôi là Nguyễn Văn Đạt, theo đuổi Robotics R&D với nền tảng về hệ thống nhúng, điều khiển và thị giác máy tính. Tôi thích kết nối thiết kế cơ khí, phần cứng và phần mềm để đưa ý tưởng thành những hệ robot có thể lắp ráp, thử nghiệm và cải tiến.', "I'm Nguyen Van Dat, focused on Robotics R&D, embedded systems, control and computer vision. I enjoy connecting mechanical design, electronics and software to turn ideas into robotic systems that can be assembled, tested and improved."),
